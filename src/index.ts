@@ -32,11 +32,11 @@ type PaginatorMeta = {
 
 type PaginatorData = {
     meta?: PaginatorMeta,
-    links?: Link[]
-} & PaginatorMeta
+    links?: Link[],
+}
 
-export const usePaginator = (data: PaginatorData) => {
-    const meta = data.meta ?? data
+export const usePaginator = (data: PaginatorData | PaginatorMeta) => {
+    const meta = (data as PaginatorData).meta ?? (data as PaginatorMeta)
     const links = meta.links ?? data.links!
 
     const items = links.map((link, index) => {
