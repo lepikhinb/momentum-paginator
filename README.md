@@ -8,7 +8,7 @@ The package helps you build reusable pagination components with a simple API.
 
 [<img src="https://inertia.monster/og5.png" width="420px" />](https://inertia.monster)
 
-Make Inertia-powered frontend a breeze to build and maintain from my upcoming book [Advanced Inertia](https://inertia.monster/). Join the waitlist and get **20% off** when the book is out.
+Make Inertia-powered frontend a breeze to build and maintain with my upcoming book [Advanced Inertia](https://inertia.monster/). Join the waitlist and get **20% off** when the book is out.
 
 ## Installation
 
