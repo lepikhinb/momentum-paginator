@@ -1,6 +1,6 @@
 {
   "name": "momentum-paginator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "files": [
     "dist"
   ],
@@ -11,6 +11,13 @@
     "build": "rollup -c",
     "publish": "esno ./scripts/publish.ts"
   },
+  "description": "Headless paginator for Laravel resources",
+  "author": "Boris Lepikhin<https://twitter.com/lepikhinb>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lepikhinb/momentum-paginator.git"
+  },
+  "homepage": "https://github.com/lepikhinb/momentum-paginator#readme",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.41",
