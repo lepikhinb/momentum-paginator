@@ -65,6 +65,7 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
 
     <component
       v-for="page in pages"
+      :is="page.isActive ? 'a' : 'span'"
       :href="page.url"
       :class="{
         'text-blue-600': page.isCurrent,
