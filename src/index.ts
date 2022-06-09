@@ -35,7 +35,7 @@ type PaginatorData = {
     links?: Link[]
 } & PaginatorMeta
 
-export function usePaginator(data: PaginatorData) {
+export const usePaginator = (data: PaginatorData) => {
     const meta = data.meta ?? data
     const links = meta.links ?? data.links!
 
