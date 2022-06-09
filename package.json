@@ -1,5 +1,5 @@
 {
-  "name": "@momentum/paginator",
+  "name": "momentum-paginator",
   "version": "0.1.0",
   "files": [
     "dist"
@@ -11,6 +11,7 @@
     "build": "rollup -c",
     "publish": "esno ./scripts/publish.ts"
   },
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.41",
     "esbuild": "^0.14.43",
