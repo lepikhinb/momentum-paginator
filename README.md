@@ -93,8 +93,8 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
 ### Properties
 | name     | type   | description                                            |
 |----------|--------|--------------------------------------------------------|
-| items    | Page[] | All page items, including `previous` and `last`        |
-| pages    | Page[] | Reduced list of pages, excluding `previous` and `last` |
+| items    | Page[] | All page items, including `previous` and `next`        |
+| pages    | Page[] | Reduced list of pages, excluding `previous` and `next` |
 | previous | Page   | Previous page                                          |
 | next     | Page   | Next page                                              |
 | first    | Page   | First page                                             |
