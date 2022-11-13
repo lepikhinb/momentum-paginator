@@ -6,9 +6,9 @@ The package helps you build reusable pagination components with a simple API.
 
 ## Advanced Inertia
 
-[<img src="https://inertia.monster/og5.png" width="420px" />](https://inertia.monster)
+[<img src="https://advanced-inertia.com/og5.png" width="420px" />](https://advanced-inertia.com)
 
-Make Inertia-powered frontend a breeze to build and maintain with my upcoming book [Advanced Inertia](https://inertia.monster/). Join the waitlist and get **20% off** when the book is out.
+Make Inertia-powered frontend a breeze to build and maintain with my upcoming book [Advanced Inertia](https://advanced-inertia.com/). Join the waitlist and get **20% off** when the book is out.
 
 ## Installation
 
@@ -25,18 +25,18 @@ yarn add momentum-paginator
 Import the package, and init the paginator by passing paginated data you receive from backend.
 
 ```typescript
-import { usePaginator } from "momentum-paginator"
+import { usePaginator } from "momentum-paginator";
 
-const paginator = usePaginator(users)
+const paginator = usePaginator(users);
 // or
-const { from, to, total, previous, next, pages } = usePaginator(users)
+const { from, to, total, previous, next, pages } = usePaginator(users);
 ```
 
 ### Basic example
 
 ```vue
 <template>
-    <a v-for="page in items" :href="page.url">{{ page.label }}</a>
+  <a v-for="page in items" :href="page.url">{{ page.label }}</a>
 </template>
 ```
 
@@ -44,11 +44,11 @@ const { from, to, total, previous, next, pages } = usePaginator(users)
 
 ```vue
 <script lang="ts" setup>
-import { usePaginator } from "momentum-paginator"
+import { usePaginator } from "momentum-paginator";
 
-const props = defineProps<{ users: Paginator<UserResource> }>()
+const props = defineProps<{ users: Paginator<UserResource> }>();
 
-const { from, to, total, previous, next, pages } = usePaginator(props.users)
+const { from, to, total, previous, next, pages } = usePaginator(props.users);
 </script>
 
 <template>
@@ -59,7 +59,8 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
       :class="{
         'text-gray-400 hover:text-gray-500': previous.isActive,
         'cursor-not-allowed text-gray-300': !previous.isActive,
-      }">
+      }"
+    >
       &laquo;
     </component>
 
@@ -71,7 +72,8 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
         'text-blue-600': page.isCurrent,
         'text-blue-400': page.isActive,
         'hover:text-blue-500': !page.isCurrent && page.isActive,
-      }">
+      }"
+    >
       {{ page.label }}
     </component>
 
@@ -81,7 +83,8 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
       :class="{
         'text-gray-400 hover:text-gray-500': next.isActive,
         'cursor-not-allowed text-gray-300': !next.isActive,
-      }">
+      }"
+    >
       &raquo;
     </component>
   </div>
@@ -91,8 +94,9 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
 ## Types
 
 ### Properties
+
 | name     | type   | description                                            |
-|----------|--------|--------------------------------------------------------|
+| -------- | ------ | ------------------------------------------------------ |
 | items    | Page[] | All page items, including `previous` and `next`        |
 | pages    | Page[] | Reduced list of pages, excluding `previous` and `next` |
 | previous | Page   | Previous page                                          |
@@ -104,10 +108,11 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users)
 | to       | number | Ending number of the current results                   |
 
 ### Page instance
+
 | name        | type    | description                                                                       |
-|-------------|---------|-----------------------------------------------------------------------------------|
+| ----------- | ------- | --------------------------------------------------------------------------------- |
 | url         | string  | URL of the page                                                                   |
-| label       | string  | Text label of the item (*page number, separator, previous and next page markers*) |
+| label       | string  | Text label of the item (_page number, separator, previous and next page markers_) |
 | isActive    | boolean | Indicates if the page is available for navigation                                 |
 | isCurrent   | boolean | Indicates if the page is the current one.                                         |
 | isSeparator | boolean | Indicates if the item is a separator                                              |
