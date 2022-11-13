@@ -1,6 +1,6 @@
 {
   "name": "momentum-paginator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "files": [
     "dist"
   ],
@@ -8,8 +8,7 @@
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "publish": "esno ./scripts/publish.ts"
+    "build": "rollup -c"
   },
   "description": "Headless paginator for Laravel resources",
   "author": "Boris Lepikhin<https://twitter.com/lepikhinb>",
