@@ -1,8 +1,7 @@
-declare global {
-  type Paginator = {
-    meta?: PaginatorMeta;
-    links?: PaginatorLink[];
-  };
+export interface Paginator<T> {
+  data: T[];
+  meta?: PaginatorMeta;
+  links?: PaginatorLink[];
 }
 
 interface PaginatorLink {
@@ -37,8 +36,8 @@ interface PaginatorMeta {
   links?: PaginatorLink[];
 }
 
-export const usePaginator = (data: Paginator | PaginatorMeta) => {
-  const meta = (data as Paginator).meta ?? (data as PaginatorMeta);
+export const usePaginator = <T>(data: Paginator<T> | PaginatorMeta) => {
+  const meta = (data as Paginator<T>).meta ?? (data as PaginatorMeta);
   const links = meta.links ?? data.links!;
 
   const items = links.map((link, index) => {
@@ -57,19 +56,23 @@ export const usePaginator = (data: Paginator | PaginatorMeta) => {
   const pages: PaginatorItem[] = items.filter(
     (item) => item.isPage || item.isSeparator
   );
+
   const current = items.find((item) => item.isCurrent);
   const previous = items.find((item) => item.isPrevious)!;
   const next = items.find((item) => item.isNext)!;
+
   const first = {
     ...items[1],
     isActive: items[1].url !== current?.url,
     label: "&laquo;",
   };
+
   const last = {
     ...items[items.length - 1],
     isActive: items[items.length - 1].url !== current?.url,
     label: "&raquo;",
   };
+
   const from = meta.from;
   const to = meta.to;
   const total = meta.total;
