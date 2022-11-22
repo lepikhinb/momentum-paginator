@@ -38,7 +38,12 @@ interface PaginatorMeta {
 
 export const usePaginator = <T>(data: Paginator<T> | PaginatorMeta) => {
   const meta = (data as Paginator<T>).meta ?? (data as PaginatorMeta);
-  const links = meta.links ?? data.links!;
+  const links = (meta.links ?? data.links!).map((link) => {
+    return {
+      ...link,
+      url: decodeURIComponent(link.url!),
+    };
+  });
 
   const items = links.map((link, index) => {
     return {
