@@ -117,6 +117,17 @@ const { from, to, total, previous, next, pages } = usePaginator(props.users);
 | isCurrent   | boolean | Indicates if the page is the current one.                                         |
 | isSeparator | boolean | Indicates if the item is a separator                                              |
 
+## Momentum
+
+Momentum is a set of packages designed to bring back the feeling of working on a single codebase to Inertia-powered apps.
+
+- [Modal](https://github.com/lepikhinb/momentum-modal) — Build dynamic modal dialogs for Inertia apps
+- [Preflight](https://github.com/lepikhinb/momentum-preflight) — Realtime backend-driven validation for Inertia apps
+- [Paginator](https://github.com/lepikhinb/momentum-paginator) — Headless wrapper around Laravel Pagination
+- [Trail](https://github.com/lepikhinb/momentum-trail) — Frontend package to use Laravel routes with Inertia
+- [Lock](https://github.com/lepikhinb/momentum-lock) — Frontend package to use Laravel permissions with Inertia
+- [Vite Plugin Watch](https://github.com/lepikhinb/vite-plugin-watch) — Vite plugin to run shell commands on file changes
+
 ## Credits
 
 - [Boris Lepikhin](https://twitter.com/lepikhinb)
