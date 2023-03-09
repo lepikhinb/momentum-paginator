@@ -4,13 +4,13 @@ export interface Paginator<T> {
   links?: PaginatorLink[];
 }
 
-interface PaginatorLink {
+export interface PaginatorLink {
   url: string | null | undefined;
   label: string;
   active: boolean;
 }
 
-interface PaginatorItem {
+export interface PaginatorItem {
   url: string | null | undefined;
   label: string;
   isPage: boolean;
@@ -21,7 +21,7 @@ interface PaginatorItem {
   isSeparator: boolean;
 }
 
-interface PaginatorMeta {
+export interface PaginatorMeta {
   current_page: number;
   first_page_url: string;
   from: number | null;
