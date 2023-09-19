@@ -82,6 +82,7 @@ export const usePaginator = <T>(data: Paginator<T> | PaginatorMeta) => {
   const from = meta.from;
   const to = meta.to;
   const total = meta.total;
+  const itemsPerPage = meta.per_page;
 
-  return { pages, items, previous, next, first, last, total, from, to };
+  return { pages, items, previous, next, first, last, total, from, to, itemsPerPage };
 };
