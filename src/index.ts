@@ -1,7 +1,9 @@
-export interface Paginator<T> {
-  data: T[];
-  meta?: PaginatorMeta;
-  links?: PaginatorLink[];
+declare global {
+  interface Paginator<T> {
+    data: T[];
+    meta?: PaginatorMeta;
+    links?: PaginatorLink[];
+  }
 }
 
 export interface PaginatorLink {
@@ -84,5 +86,16 @@ export const usePaginator = <T>(data: Paginator<T> | PaginatorMeta) => {
   const total = meta.total;
   const itemsPerPage = meta.per_page;
 
-  return { pages, items, previous, next, first, last, total, from, to, itemsPerPage };
+  return {
+    pages,
+    items,
+    previous,
+    next,
+    first,
+    last,
+    total,
+    from,
+    to,
+    itemsPerPage,
+  };
 };
